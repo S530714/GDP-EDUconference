@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title> coupon code</title>
+
+    <script src="../server.js"></script>
+    <script>
+        function verification() {
+
+
+            var h = document.getElementById("coupon").value;
+            var k = '<%= code1 %>'
+            if (h == k) {
+                location.replace("/edupay");
+            } else {
+                alert("You have been entered wrong coupon code");
+                //s=false;
+            }
+
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+    <div class="row">
+        <br><br><br><br><br>
+        <div class="col-md-4" style="margin-top:100px"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="coupon">Enter coupon code here</label>
+                <input type="text" class="form-control" id="coupon" name="coupon" required></div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="submit" Style="margin-right: 10px" onclick="verification() " class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-md-4"></div>
+
+
+</body>
+
+</html>

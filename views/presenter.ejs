@@ -1,0 +1,125 @@
+<% include home %>
+
+	<head>
+		<link href="/css/home.css" type="text/css" rel="stylesheet" />
+	</head>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Presenter Registration Form</h2>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<p>Please fill the below details</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<form method="POST" action="/presenter">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">First Name</label>
+						<input type="text" class="form-control" id="fname" name="fname" pattern="[a-zA-Z ]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">Last Name</label>
+						<input type="text" class="form-control" id="lname" name="lname" pattern="[a-zA-Z ]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="email">Email Address</label>
+						<input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+" required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="contact">Contact Number</label>
+						<input type="text" class="form-control" id="contact" name="contact" pattern="[0-9]{10}" required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="level">Target Audience</label>
+						<input type="" class="form-control" id="target" name="target" pattern="[a-zA-Z ]+"required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="topic">Title</label>
+						<select multiple name="topic" id="topic" class="form-control">
+							<% for(let i = 0 ; i < list.length; i++) { %>
+								<option value= '<%= list[i].add %>'><%= list[i].add %></option>							
+								<% } %> 
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="attach">If document is not ready, Please email to @nwmissouri once registered.</label>
+						
+													<input type="file" name="attach"></div>
+												
+							<input type="" name="attach1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+"></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+				<label for="subject">Brief Description of the topic</label>
+				<div class="form-group">
+					<textarea id="subject" class="form-control" name="subject" ></textarea>
+				</div>
+				<div class="col-md-4"></div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="Food">Food</label><br>
+						<input type="radio" name="food" value="Vegetarian">Vegetarian<br>
+						<input type="radio" name="food" value="Regular">Regular<br>
+						<input type="radio" name="food" value="Gluten Free">Gluten Free<br>
+						<div class="col-md-4"></div>
+					</div>
+				</div>
+			</div>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+		<div class="col-md-4"></div>
+		<input type="text" name="confirm" hidden>
+		<input type="text" name="delete" hidden>
+		<input type="text" name="pay" hidden>
+		</form>
+	</div>
+	

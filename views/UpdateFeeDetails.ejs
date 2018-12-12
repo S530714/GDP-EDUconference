@@ -1,0 +1,67 @@
+<%include adminheader%>
+
+<div class="container">
+    <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+
+<div class="col-md-3"></div>
+<div class="col-md-9"><br><br><br><br>
+
+<form method="POST" action="/fee" >
+    <div class="form-group">
+        <div class="col-md-3">
+    <label for = "Programname">Registration type:</label></div>
+    <div class="col-md-3">
+    <input type="text" name="rates" id="rates"/></div></div><br><br>
+    <div class="form-group">
+        <div class="col-md-3">
+    <label for = "fee">Registration fee:</label></div>
+    <div class="col-md-2">
+    <input type="number" name="fee" id="fee"/></div></div><br>
+    <div class="form-group">
+        <div class="col-md-3">
+    <label for = "extra">What included?</label></div>
+    <div class="col-md-4">
+    <input type="text" name="extra" id="extra"/></div></div><br>
+    <div align="center" class="form-group" >
+        <div class="col-md-6">
+    <button  onclick="submit" class="btn btn-primary"/>submit</button></div><br><br>
+        </div>
+    </div>
+</form>
+    <h3 style="text-align:center">Update Fee Details</h3>
+        <table class="w3-table-all w3-card-4" id="update" align="center">
+            <thead>
+                <tr>
+                    <th>Registarion Type</th>
+                    <th>Registarion fee</th> 
+                    <th>What included?</th>
+                    <th>Delete</th>
+                  </tr>
+            </thead>
+                     
+            <% for(let i = 0 ; i < list.length; i++) { %>
+              <tr>
+                  <td >
+                      <%= list[i].rates %>
+                  </td>
+                  <td >
+                      <%="$"+ list[i].fee %>
+                  </td>
+                  <td >
+                      <%= list[i].extra %>
+                  </td>
+                  <form action="/deletefee" method="POST">
+                    <input type="text" name="presId" value="<%= list[i]._id %>" hidden>
+                    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                    </form>
+                
+                  </form>
+                  
+                </tr>
+                <% } %>
+                
+                
+    </div>
+
+    </table>
+    </form>

@@ -1,0 +1,59 @@
+<%include adminheader%>
+
+<div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"><br><br><br><br>
+        
+        <form method="POST" action="/new" >
+            <div class="form-group">
+                <div class="col-md-2">
+            <label for = "Programname">Program Name:</label></div>
+            <div class="col-md-1">
+            <input type="text" name="programname"/></div></div><br><br>
+            <div class="form-group">
+                <div class="col-md-2">
+            <label for = "Date">Date & Time:</label></div>
+            <div class="col-md-1">
+            <input type="text" name="Date"/></div></div><br>
+            
+            <div align="center" class="form-group" >
+                <div class="col-md-5">
+            <input type="submit" class="btn btn-primary" /></div></div><br><br>
+        </div>
+        
+        </form>
+        
+                <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+                <h3 style="text-align:center">Update Deadlines</h3>
+        
+                <table class="w3-table-all w3-card-4" id="update" align="center">
+                    <thead>
+                        <tr>
+                            <th> Program Name </th>
+                            <th> Date & Time </th>
+                            <th> Delete </th>
+                        </tr>
+                    </thead>
+                  
+                    <% for(let i = 0 ; i < list.length; i++) { %>
+                        <tr>
+                            <td >
+                                <%= list[i].programname %>
+                            </td>
+                            <td >
+                                <%= list[i].Date %>
+                            </td>
+                                            
+                                <form action="/deletedeadlines" method="POST">
+                                <input type="text" name="presId" value="<%= list[i]._id %>" hidden>
+                                <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                                </form>
+                          
+                        </tr>
+                        <% } %>
+                        
+                        
+            </div>
+        
+            </table>
+        

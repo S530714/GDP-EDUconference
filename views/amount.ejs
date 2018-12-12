@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<%include adminheader%>
+
+<div class="container"><br>
+    <div class="col-md-4"></div>
+    <div class="col-md-8"><br><br><br><br>
+           
+
+        <form method="POST" action="/amount">
+            <div class="form-group">
+                <label for="add">Type:</label>
+                <input type="text" name="type" /></div>
+            <div class="form-group">
+                <label for="add">Amount:</label>
+                <input type="text" name="amount"/></div>
+    </div><br><br>
+
+    <div align="center" class="form-group">
+
+        <input type="submit" name="submit" class="btn btn-primary" /><br>
+    </div>
+
+        </form>
+
+        <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+        <h3 style="text-align:center">Update Prices</h3>
+
+        <table class="w3-table-all w3-card-4" id="add" align="center">
+            <thead>
+                <tr>
+                    <th> Type  </th>
+                    <th> Amount </th>
+                    <th> Delete </th>
+
+                </tr>
+            </thead>
+
+
+            <% for(let i = 0 ; i < list.length; i++) { %>
+                <tr>
+                    <form action="/updateamount/<%= list[i].type %>" method="POST">
+                    <td name="type" id="type">
+                        <%= list[i].type %>
+                    </td>
+                    <td contenteditable="true" name="amount" id="amount">
+                       <input name="amount" value="<%= list[i].amount %>" ></input>
+                    </td>
+                        <td><button type="submit" name="update" class="btn btn-warning">Update</button></td>
+                    </form>
+
+                </tr>
+                <% } %>
+                </script>
+
+
+    </div>
+
+    </table>

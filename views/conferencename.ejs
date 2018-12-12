@@ -1,0 +1,50 @@
+<%include adminheader%>
+
+    <div class="container"><br>
+        <div class="col-md-4"></div>
+        <div class="col-md-8"><br><br><br><br>
+               
+
+            <form method="POST" action="/conferencename">
+                <div class="form-group">
+                    <label for="add">Conference Name:</label>
+                    <input type="text" name="conference" /></div>
+        </div><br><br>
+
+        <div align="center" class="form-group">
+
+            <input type="submit" name="submit" class="btn btn-primary" /><br>
+        </div>
+
+        </form>
+
+        <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+        <h3 style="text-align:center">Conference Name</h3>
+
+        <table class="w3-table-all w3-card-4" id="add" align="center">
+            <thead>
+                <tr>
+                    <th> Conference Name </th>
+                    <th> Delete </th>
+
+                </tr>
+            </thead>
+
+            <% for(let i = 0 ; i < list.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= list[i].conference %>
+                    </td>
+
+                    <form action="/deletename" method="POST">
+                        <input type="text" name="presId" value="<%= list[i]._id %>" hidden>
+                        <td><button type="submit" name="delete" class="btn btn-danger">Delete</button></td>
+                    </form>
+
+                </tr>
+                <% } %>
+
+
+    </div>
+
+    </table>

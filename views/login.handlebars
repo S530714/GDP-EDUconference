@@ -1,0 +1,28 @@
+<br><div class="col-md-10"></div>
+<div class="col-md-1">
+ <input class="btn btn-danger" type="button" onClick="location.href='/users/register'" value='SignUp'></div>
+   <input class="btn btn-success" type="button" onClick="location.href='/'" value='Home'>
+   <div class="col-md-4"></div>
+<div class="col-md-8"><br><br><h2>Conference Admin Login</h2><br><br></div>
+<form method="post" action="/users/login">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" name="username" placeholder="Username" required>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password" required>
+  </div>
+<br>
+ <div class="row">
+		<div class="col-md-1"></div>
+    <div class="col-md-6">
+		<button type="submit" name="submit" class="btn btn-primary">Submit</button></div>	
+  	<div class="col-md-2">
+  <input class="btn btn-warning" type="button" onClick="location.href='/forgotE'" value='Forgot Password'>
+</div>
+  
+</div>
+</form>

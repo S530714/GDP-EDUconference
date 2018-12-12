@@ -1,0 +1,55 @@
+<% include home %>
+
+  <head>
+    <link href="/css/homepage.css" type="text/css" rel="stylesheet" />
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            ;
+        }
+        </style>    
+</head>
+<h3 class="p1">Welcome to  <% for(let i = 0 ; i < list1.length; i++) { %>
+    <%= list1[i].conference %>
+    <% } %>
+    </h3><br>
+
+    <table class="w3-table-all w3-card-4" id="t" align="center">
+        <thead>
+                <tr >
+                        <th>Registration type</th>
+                        <th>Registration fee</th> 
+                        <th>What is included?</th>
+                       
+                      </tr>
+      </thead>      
+    
+      <% for(let i = 0 ; i < list.length; i++) { %>
+        <tr>
+            <td >
+                <%= list[i].rates %>
+            </td>
+            <td >
+                <%= " $"+list[i].fee  %>
+            </td>
+            <td >
+                <%= list[i].extra %>
+            </td>
+           
+          </tr>
+  
+          <% } %>
+  
+          </div>   
+  </table>
+  <body>  
+      <br>
+      <br>
+      
+
+    <p>We are conducting several programs in this conference</p>
+
+    <p>To register for the conference click on the registration tab and select the category you desire</p>
+
+    <marquee behaviour="alternate" direction="left">Hurry up and register early for the conference with reduced fee</marquee>
+  </body>

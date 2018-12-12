@@ -1,0 +1,76 @@
+<% include home %>
+
+    <head>
+        <link href="/css/home.css" type="text/css" rel="stylesheet" />
+    </head>
+
+    <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+    <h3 style="text-align:center">These are the Deadlines for Presenters</h3>
+
+    <table class="w3-table-all w3-card-4" id="update" align="center">
+        <thead>
+            <tr>
+                <th> Program Name </th>
+                <th> Date & Time </th>
+
+            </tr>
+        </thead>
+
+        <% for(let i = 0 ; i < list.length; i++) { %>
+            <tr>
+                <td>
+                    <%= list[i].programname %>
+                </td>
+                <td>
+                    <%= list[i].Date %>
+                </td>
+
+            </tr>
+            <% } %>
+
+    </table><br>
+    <br>
+    <h3 style="text-align:center">This is the Information Regarding Program Details</h3>
+    <table class="w3-table-all w3-card-4" id="update" align="center">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Location</th>
+                <th>Program</th>
+                <th>Description</th>
+                <th>Presenter</th>
+                <th>Presentation</th>
+                
+
+            </tr>
+        </thead>
+
+        <% for(let i = 0 ; i < list1.length; i++) { %>
+            <tr>
+
+                <td>
+                    <%= list1[i].Time %>
+                </td>
+                <td>
+                    <%= list1[i].Activity %>
+                </td>
+                <td>
+                    <%= list1[i].Location %>
+                </td>
+                <td>
+                    <%= list1[i].Program %>
+            </td> 
+            <td>
+                    <%= list1[i].Description %>
+            </td>
+            <td>
+                <%= list1[i].Presenter%>
+        </td>
+            <td>
+                <a href="<%= list1[i].Presentation %>"><%= list1[i].Presentation %>
+        </td>
+
+            </tr>
+            <% } %>
+    </table>

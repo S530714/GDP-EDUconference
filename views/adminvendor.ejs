@@ -1,0 +1,92 @@
+<% include adminheader %>
+
+  <head>
+    <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div><br><br><br><br>
+  <body>
+    <h2 align="center"> Vendor details list</h2>
+    
+    
+    <div class="w3-container">
+      <table class="w3-table-all w3-card-4" id="Details" align="center">
+        <tr>
+          <th>Number</th>
+          <th>Company Name</th>
+          <th>city</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Website URL</th>
+          <th>Contact Name</th>
+          <th>Contact Title</th>
+          <th>Email</th>
+          <th>Contact Phone</th>
+          <th>Payment status</th>
+          
+        </tr>
+        
+    <% for(let i = 0; i < list.length; i++) { %>
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= list[i].cname %></td>
+      <td><%= list[i].city %></td>
+      <td><%= list[i].State %></td>
+      <td><%= list[i].Zip %></td>
+      <td><%= list[i].URL %></td>,
+      <td><%= list[i].name %></td>
+      <td><%= list[i].Title %></td>
+      <td><%= list[i].email %></td>
+      <td><%= list[i].contact %></td>
+      <form action="/vendorpay" method="POST">
+        <input type="text" name="pay" value="<%= list[i].pay %>" hidden>
+        <input type="text" value="<%= list[i].email %>" name="email1" hidden>
+        <%if(list[i].pay ==0){%>
+          <td><button type="submit" class="btn btn-success">pay</button></td>
+          <%}%>
+            <%if(list[i].pay !=0){%>
+              <td><button disabled class="btn btn-success">paid</button></td>
+              <%}%>
+      </form>
+    </tr>
+    <% } %>
+  </table>
+  <button id="btnExport" onclick="fnExcelReport();"> Create Export </button>
+  <div>
+    </div> 
+</div>
+<script>
+  function fnExcelReport()
+           {
+             var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+             var textRange; var j=0;
+             tab = document.getElementById('Details'); // id of table
+
+        for (j = 0; j < tab.rows.length; j++) {
+          tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+
+        }
+
+        tab_text = tab_text + "</table>";
+        tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");
+        tab_text = tab_text.replace(/<img[^>]*>/gi, "");
+        tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, "");
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+          txtArea1.document.open("txt/html", "replace");
+          txtArea1.document.write(tab_text);
+          txtArea1.document.close();
+          txtArea1.focus();
+          sa = txtArea1.document.execCommand("SaveAs", true, "Say Thanks to Conference.xls");
+        }
+        else
+          sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+
+        return (sa);
+      }
+    </script>

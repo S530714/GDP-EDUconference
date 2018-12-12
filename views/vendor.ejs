@@ -1,0 +1,129 @@
+<% include home %>
+
+	<head>
+		<link href="/css/home.css" type="text/css" rel="stylesheet" />
+			</head>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Vendor Registration Form</h2>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<p>Please fill the below details</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<form method="POST" action="/vendor" role="form">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+
+						<label for="Vendor">Select Category </label>
+
+						<select name="Vendor" id="Vendor" class="form-control">
+							<option value="Green">Green</option>
+							<option value="White">White</option>
+							<option value="Gray">Gray</option>
+						</select>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="cname">Company Name</label>
+						<input type="text" class="form-control" id="cname" name="cname" pattern="[a-zA-Z/ ]+"required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="city">City</label>
+						<input type="text" class="form-control" id="city" name="city" pattern="[a-zA-Z]+"required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="State">State</label>
+						<input type="text" class="form-control" id="State" name="State" pattern="[a-zA-Z]+" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="Zip">Zip</label>
+						<input type="text" class="form-control" id="Zip" name="Zip" pattern="[0-9]+" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="URL">Website URL</label>
+						<input type="text" class="form-control" id="URL" name="URL""[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">Contact Name</label>
+						<input type="text" class="form-control" id="lname" name="lname" pattern="[a-zA-Z ]+"required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="Title">Contact Title</label>
+						<input type="text" class="form-control" id="Title" name="Title" pattern="[a-zA-Z ]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="email">Email Address</label>
+						<input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+"required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="contact">Contact Phone</label>
+						<input type="text" class="form-control" id="contact" name="contact" pattern="[0-9]{10}+" required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary">Submit</button></div>
+				<div class="col-md-4"></div>
+				<input type="text" name="pay" hidden>
+		</form>
+		</div>

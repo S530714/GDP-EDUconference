@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="/Assets/css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="/Assets/css/cart.css" rel="stylesheet" type="text/css" />
+  <title>Conference </title>
+</head>
+
+<body>
+
+  <h2>Items in your cart</h2>
+
+  <p id="demo"></p>
+
+  <div class="row">
+    <div class="column">
+      <h2>Item Name</h2>
+      <p> Name :
+        <%= list+","+list1 %>
+      </p>
+      <p> Email :
+        <%= list2 %>
+      </p>
+    </div>
+    <div class="column1">
+      <h2>Quantity</h2>
+      <p><%= quantity %></p>
+
+    </div>
+    <div class="column2">
+      <h2>Remove</h2>
+      <div class="btn-row">
+        <form action="/del" method="POST">
+          <input value="<%= list2 %>" name="email2" hidden>
+          <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+
+      </div>
+
+    </div>
+    
+  </div>
+  <div class="column3">
+  <h2>Amount</h2>
+  <p> <%= amount %></p>
+   
+   
+  </div>
+
+    <div class="btn-row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <a href='/'><button class="btn btn-success" type="button" value="Continue Shopping" >Continue Shopping</button></a><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <a href='/PayThroughCards'><button class="btn btn-success" type="button" name="Pay card" value="Pay Through Card" >Pay Through Card</button></a><br><br>
+        <form action="/Paymentthroughcheck/<%= list2 %>" method="GET">
+          <input type="text" name="quantity" value="<%= quantity %>" hidden>
+          <input type="text" name="amount" value="<%= amount %>" hidden>
+
+          <button type="submit" name="pay" class="btn btn-danger">Paymet Through Cheque</button>
+      </form>
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <a href='/Paymentthroughcheck'><button class="btn btn-success" type="button" name = "paycheck" value="<%= list2 %>" >Pay Through Check</button></a>-->
+       
+
+      </div>
+    </div>
+ </body>
+</html>

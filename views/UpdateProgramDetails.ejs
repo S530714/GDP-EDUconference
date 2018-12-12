@@ -1,0 +1,114 @@
+<%include adminheader%>
+
+        <div class="container">
+                <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+
+
+                <div class="col-md-4"></div>
+                <div class="col-md-8"><br><br><br><br>
+
+                        <form method="POST" action="/pgm">
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Time">Time:</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Time" /></div>
+                                </div><br><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Activity">Activity:</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Activity" /></div>
+                                </div><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Location">Location</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Location" /></div>
+                                </div><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Program">Program</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Program" /></div>
+                                </div><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Description">Description</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Description" /></div>
+                                </div><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Presenter">Presenter</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Presenter" /></div>
+                                </div><br>
+                                <div class="form-group">
+                                        <div class="col-md-2">
+                                                <label for="Presentation">Presentation</label></div>
+                                        <div class="col-md-1">
+                                                <input type="text" name="Presentation" /></div>
+                                </div><br>
+                                <div align="center" class="form-group">
+                                        <div class="col-md-7">
+                                                <input type="submit" name="ADD" class="btn btn-primary" value="ADD" /></div><br><br>
+                                </div>
+                </div>
+                </form>
+                <h3 style="text-align:center">Update Program Details</h3>
+                <table class="w3-table-all w3-card-4" id="update" align="center">
+                        <thead>
+                                <tr>
+                                        <th>Time</th>
+                                        <th>Activity</th>
+                                        <th>Location</th>
+                                        <th>Program</th>
+                                        <th>Description</th>
+                                        <th>Presenter</th>
+                                        <th>Presentation</th>
+                                        <th>Delete</th>
+                                </tr>
+                        </thead>
+
+                        <% for(let i = 0 ; i < list.length; i++) { %>
+                                <tr>
+                                        <td>
+                                                <%= list[i].Time %>
+                                        </td>
+                                        <td>
+                                                <%= list[i].Activity %>
+                                        </td>
+                                        <td>
+                                                <%= list[i].Location %>
+                                        </td>
+                                        <td>
+                                                <%= list[i].Program %>
+                                        </td> 
+                                        <td>
+                                                <%= list[i].Description %>
+                                        </td>
+                                        <td>
+                                                <%= list[i].Presenter%>
+                                        </td>
+                                        <td>
+                                                <a href="<%= list[i].Presentation %>"><%= list[i].Presentation %>
+                                        </td>
+
+                                        <form action="/deletepgm" method="POST">
+                                                <input type="text" name="presId" value="<%= list[i]._id %>" hidden>
+                                                <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                                        </form>
+                                </tr>
+                                <% } %>
+        </div>
+        </table><br>
+        <form action="/pgmmail" method="POST" align="center">  
+                
+                <button type="submit" name="submit" onclick="myFunction()" class="btn btn-success">Submit</button>
+        </form>
+        <script>
+                function myFunction() {
+                alert("Email has been sent");
+                }
+        </script>

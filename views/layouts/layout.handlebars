@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Conference</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="/css/home.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="header clearfix">
+      <div class="row">
+        <div class="col-lg-12">
+       {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+    
+
+           {{#if info_msg}}
+            <div class="alert alert-danger">{{info_msg}}</div>
+          {{/if}}
+
+           {{#if message}}
+            <div class="alert alert-danger">{{message}}</div>
+          {{/if}}
+
+
+          
+          {{{body}}}
+
+      </div>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+  </div> <!-- /container -->
+</body>
+
+</html>

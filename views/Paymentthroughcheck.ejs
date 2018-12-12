@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="Anusha Chowdary Kollu.css" />
+	<link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Conference </title>
+</head>
+<body>
+	<div class="container" align="center">
+		<h2>Northwest Missouri State University</h2>
+		<p>800 University Drive, OL246<br> Maryville, MO 64468<br> http://nwmissouri.edu/dotedu/
+		</p>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-6">
+			<h4><b>Bill to: </b></h4>
+			<% for(let i = 0 ; i < list.length; i++) { %>
+				
+				<p> Name:  <%= list[i].lname %> </p>
+				<p> Email:  <%= list[i].email %> </p>
+				<p> Address:  <%= list[i].institutionc %>,  <%= list[i].institutions %>,  <%= list[i].zipcode %>,  <%= list[i].country %> </p>
+					
+					
+					<% } %> 
+		</div>
+	</div>
+	<br>
+	
+	<table id="update" align="center">
+		<tr>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Amount</th>
+
+		</tr>
+		<tr>
+			<td>Registration</td>
+			<td>$ 125.00</td>
+			<td>2</td>
+			<td> $ 270.00</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td>Total</td>
+			<td>$ 270.00</td>
+		</tr>
+	</table>
+	<br><br>
+	<div class="col-md-1"></div>
+	<div class="col-md-4">
+		<p><b>Make Cheques Payable To: </b>
+			<br> Northwest Missouri State University<br></p>
+		<p> Please include a copy of this invoice with your payment!<br> If you have any questions regarding this invoice,<br></p>
+		<b>Please contact</b> <br> Darla Runyon
+		<br> 660-562-1532
+		<br><a href="mailto:drunyon@nwmissouri.edu">drunyon@nwmissouri.edu</a>
+		<br>
+	</div>
+	<div align="center">
+		<button type="button" class="btn btn-success btn-md" onclick="window.print()"> Print </button>
+	</div>
+</body>
+</html>

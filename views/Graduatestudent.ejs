@@ -1,0 +1,138 @@
+<% include home %>
+
+	<head>
+		<link href="/css/home.css" type="text/css" rel="stylesheet" />
+	</head>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Graduate Student Registration Form</h2>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<p>Please fill the below details</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<form action="/Graduatestudent" method="POST">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">First Name</label>
+						<input type="text" class="form-control" id="fname" name="fname" pattern="[a-zA-Z]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">Last Name</label>
+						<input type="text" class="form-control" id="lname" name="lname" pattern="[a-zA-Z]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="email">Email Adress</label>
+						<input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+" required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="contact">Contact Number</label>
+						<input type="text" class="form-control" id="contact" name="contact"  pattern="[0-9]{10}" required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="school">Institution</label>
+						<input type="school" class="form-control" id="institution" name="institution" pattern="[a-zA-Z]+"  required ></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="school">Institution City</label>
+						<input type="school" class="form-control" id="institutionc" name="institutionc"  pattern="[a-zA-Z]+"  required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="school">Institution State</label>
+						<input type="school" class="form-control" id="institutions" name="institutions"  pattern="[a-zA-Z]+"  required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="school">Zip Code</label>
+						<input type="school" class="form-control" id="zipcode" name="zipcode" pattern="[0-9]+"  required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="school">Country</label>
+						<input type="school" class="form-control" id="country" name="country" pattern="[a-zA-Z ]+"  required></div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="topic">Program</label>
+						<select multiple name="program" id="program" class="form-control">
+							<% for(let i = 0 ; i < list.length; i++) { %>
+								<option value= '<%= list[i].add %>'><%= list[i].add %></option>							
+								<% } %> 
+							  </select>
+							</div></div>
+				<div class="col-md-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="Food">Food</label><br>
+						<input type="radio" name="food" value="Vegetarian">Vegetarian<br>
+						<input type="radio" name="food" value="Regular">Regular<br>
+						<input type="radio" name="food" value="Gluten Free">Gluten Free<br>
+						<div class="col-md-4"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary">Sumbit</button></div>
+				<div class="col-md-4"></div>
+				<input type="text" name="reply" hidden>
+				<input type="text" name="pay" hidden>
+		</form>
+		</div>
